@@ -40,12 +40,12 @@ const gDecode = (data) => {
 app.post("/encode", (req, res) => {
   // console.log("Got body:", req.body);
   // res.sendStatus(200);
-  res.send(gEncode(req.body.data));
+  res.send(gEncode({ code: req.body.data }));
   // res.send(true);
 });
 
 app.post("/decode", (req, res) => {
-  res.send(gDecode(req.body.data));
+  res.send(gDecode({ code: req.body.data }));
 });
 
 app.get("/", (req, res) => {
